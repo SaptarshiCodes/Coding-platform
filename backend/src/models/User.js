@@ -15,6 +15,10 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: "",
     },
+    username: {
+      type: String,
+      unique: true,
+    },
     clerkId: {
       type: String,
       required: true,
