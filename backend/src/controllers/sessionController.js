@@ -51,7 +51,7 @@ export async function getActiveSessions(_, res) {
   try {
     const sessions = await Session.find({ status: "active" })
       .populate("host", "name profileImage email clerkId")
-      .toSorted({ createdAt: -1 })
+      .sort({ createdAt: -1 })
       .limit(20);
 
     res.status(200).json({ sessions });
@@ -69,7 +69,7 @@ export async function getMyRecentSessions(req, res) {
       status: "completed",
       $or: [{ host: userId }, { participant: userId }],
     })
-      .sort({ created: -1 })
+      .sort({ createdAt: -1 })
       .limit(20);
 
     res.status(200).json({ sessions });
