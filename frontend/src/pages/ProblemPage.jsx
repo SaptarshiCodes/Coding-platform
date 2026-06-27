@@ -14,6 +14,7 @@ import confetti from "canvas-confetti";
 
 function ProblemPage() {
   const { id } = useParams();
+
   const navigate = useNavigate();
 
   const [currentProblemId, setCurrentProblemId] = useState("two-sum");
@@ -34,6 +35,14 @@ function ProblemPage() {
       setOutput(null);
     }
   }, [id, selectedLanguage]);
+
+    if (id && !PROBLEMS[id]) {
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <h1 className="text-7xl font-black font-mono">404 - Problem Not Found</h1>
+      </div>
+    );
+  }
 
   const handleLanguageChange = (e) => {
     const newLang = e.target.value;
