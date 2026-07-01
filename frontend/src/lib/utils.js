@@ -1,5 +1,7 @@
 export const getDifficultyBadgeClass = (difficulty) => {
-  switch(difficulty.toLowerCase()) {
+  if (!difficulty) return "badge-ghost";
+
+  switch (difficulty.toLowerCase()) {
     case "easy":
       return "badge-success";
     case "medium":
@@ -9,4 +11,4 @@ export const getDifficultyBadgeClass = (difficulty) => {
     default:
       return "badge-ghost";
   }
-}
+};

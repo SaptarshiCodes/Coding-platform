@@ -43,7 +43,7 @@ function RecentSessions({ sessions, isLoading }) {
                       className={`w-12 h-12 rounded-xl flex items-center justify-center ${
                         session.status === "active"
                           ? "bg-gradient-to-br from-success to-success/70"
-                          : "bg-gradient-to-br from-primary to-secondary"
+                          : "bg-gradient-to-br from-primary to-primary-content/40"
                       }`}
                     >
                       <Code2 className="w-6 h-6 text-white" />
