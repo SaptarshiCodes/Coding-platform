@@ -12,7 +12,7 @@ export const sessionApi = {
   },
 
   getMyRecentSessions: async () => {
-    const response = await axiosInstance.get("/sessions/my-recents");
+    const response = await axiosInstance.get("/sessions/my-recent");
     return response.data;
   },
 
@@ -27,7 +27,7 @@ export const sessionApi = {
   },
 
   endSession: async (id) => {
-    const response = await axiosInstance.get(`/sessions/${id}/end`);
+    const response = await axiosInstance.post(`/sessions/${id}/end`);
     return response.data;
   },
 

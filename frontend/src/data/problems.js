@@ -39,9 +39,10 @@ export const PROBLEMS = {
 }
 
 // Test cases
-console.log(twoSum([2, 7, 11, 15], 9)); // Expected: [0, 1]
-console.log(twoSum([3, 2, 4], 6)); // Expected: [1, 2]
-console.log(twoSum([3, 3], 6)); // Expected: [0, 1]`,
+// Example usage:
+// twoSum([2, 7, 11, 15], 9) // Expected: [0, 1]
+// twoSum([3, 2, 4], 6) // Expected: [1, 2]
+// twoSum([3, 3], 6) // Expected: [0, 1]`,
       python: `def twoSum(nums, target):
     # Write your solution here
     pass
@@ -104,11 +105,11 @@ class Solution {
 // Test cases
 let test1 = ["h","e","l","l","o"];
 reverseString(test1);
-console.log(test1); // Expected: ["o","l","l","e","h"]
+// Expected: ["o","l","l","e","h"]
 
 let test2 = ["H","a","n","n","a","h"];
 reverseString(test2);
-console.log(test2); // Expected: ["h","a","n","n","a","H"]`,
+// Expected: ["h","a","n","n","a","H"]`,
       python: `def reverseString(s):
     # Write your solution here
     pass
@@ -187,9 +188,9 @@ class Solution {
 }
 
 // Test cases
-console.log(isPalindrome("A man, a plan, a canal: Panama")); // Expected: true
-console.log(isPalindrome("race a car")); // Expected: false
-console.log(isPalindrome(" ")); // Expected: true`,
+// Expected: true
+// Expected: false
+// Expected: true`,
       python: `def isPalindrome(s):
     # Write your solution here
     pass
@@ -253,9 +254,9 @@ print(isPalindrome(" "))  # Expected: True`,
 }
 
 // Test cases
-console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4])); // Expected: 6
-console.log(maxSubArray([1])); // Expected: 1
-console.log(maxSubArray([5,4,-1,7,8])); // Expected: 23`,
+// Expected: 6
+// Expected: 1
+// Expected: 23`,
       python: `def maxSubArray(nums):
     # Write your solution here
     pass
@@ -318,8 +319,8 @@ print(maxSubArray([5,4,-1,7,8]))  # Expected: 23`,
 }
 
 // Test cases
-console.log(maxArea([1,8,6,2,5,4,8,3,7])); // Expected: 49
-console.log(maxArea([1,1])); // Expected: 1`,
+// Expected: 49
+// Expected: 1`,
       python: `def maxArea(height):
     # Write your solution here
     pass
