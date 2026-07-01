@@ -8,7 +8,11 @@ export const useCreateSession = () => {
     mutationFn: sessionApi.createSession,
     onSuccess: () => toast.success("Session created successfully!"),
     onError: (error) =>
-      toast.error(error.response?.data?.message || "Failed to create room"),
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to create room",
+      ),
   });
 
   return result;
@@ -50,7 +54,11 @@ export const useJoinSession = () => {
     mutationFn: sessionApi.joinSession,
     onSuccess: () => toast.success("Joined session successfully!"),
     onError: (error) =>
-      toast.error(error.response?.data?.message || "Failed to join session"),
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to join session",
+      ),
   });
 
   return result;
@@ -98,7 +106,11 @@ export const useEndSession = () => {
       queryClient.invalidateQueries({ queryKey: ["activeSessions"] });
     },
     onError: (error) =>
-      toast.error(error.response?.data?.message || "Failed to end session"),
+      toast.error(
+        error.response?.data?.message ||
+          error.message ||
+          "Failed to end session",
+      ),
   });
 
   return result;

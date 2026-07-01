@@ -1,9 +1,20 @@
 import axiosInstance from "../lib/axios";
 
+const requireSessionPayload = (data, fallbackMessage) => {
+  if (!data?.session?._id) {
+    throw new Error(data?.message || fallbackMessage);
+  }
+
+  return data;
+};
+
 export const sessionApi = {
   createSession: async (data) => {
     const response = await axiosInstance.post("/sessions", data);
-    return response.data;
+    return requireSessionPayload(
+      response.data,
+      "Session was not created. Please sign in again.",
+    );
   },
 
   getActiveSessions: async () => {
@@ -23,12 +34,12 @@ export const sessionApi = {
 
   joinSession: async (id) => {
     const response = await axiosInstance.post(`/sessions/${id}/join`);
-    return response.data;
+    return requireSessionPayload(response.data, "Failed to join session");
   },
 
   endSession: async (id) => {
     const response = await axiosInstance.post(`/sessions/${id}/end`);
-    return response.data;
+    return requireSessionPayload(response.data, "Failed to end session");
   },
 
   getStreamToken: async () => {
